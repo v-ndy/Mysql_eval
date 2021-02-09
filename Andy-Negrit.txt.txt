@@ -1,0 +1,19 @@
+#1 SELECT titre FROM film WHERE genre_id = '1,2,3' LIKE ‘%e’
+#2 SELECT titre,duree_min,resum FROM film
+#3 SELECT LOWER(titre) AS "titre min" FROM film WHERE id BETWEEN '42' AND '84’
+#4 SELECT UPPER(titre),UPPER(date_fin_affiche) FROM film ORDER BY date_fin_affiche DESC
+#5 SELECT SHA1(titre) AS "Titres_SHA1", MD5(titre) AS "Titres_MD5" FROM film
+#6 SELECT COUNT(*) FROM film WHERE titre LIKE ‘B%’
+#7 SELECT titre FROM film WHERE titre LIKE "%the%" AND genre_id = 2
+#8 SELECT titre,date_debut_affiche,distrib_id,nom FROM film,distrib WHERE titre LIKE "%day%" ORDER BY date_debut_affiche DESC
+#9 SELECT genre.nom AS "nom genre", COUNT(*)AS "nombre films", SUM(film.duree_min)AS "minutes totales" FROM film JOIN genre ON film.genre_id = genre.id WHERE film.genre_id BETWEEN 3 AND 5 GROUP BY film.genre_id
+#10 SELECT MIN(film.id) AS "min id film" FROM film,genre WHERE film.genre_id = genre.id AND genre.nom = "comedy" 
+#11 SELECT titre, date_debut_affiche, date_fin_affiche, DATEDIFF(date_fin_affiche, date_debut_affiche) AS "temps_affiche" FROM film WHERE DATEDIFF(date_fin_affiche, date_debut_affiche) IS NOT NULL
+#12 
+#13 SELECT nom,pourcentage_reduc FROM reduction WHERE pourcentage_reduc > 0 AND pourcentage_reduc != 25 ORDER BY id DESC
+#14 SELECT nom_salle FROM salle WHERE nbr_siege BETWEEN 100 AND 300 AND etage_salle = 2
+#15
+#16 SELECT SUM(nbr_siege) AS "nbr place" FROM salle WHERE etage_salle=1
+#17
+#18 SELECT id, titre, resum FROM film WHERE id = 42
+#19 
